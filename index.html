@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Expense Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<body class="bg-blue-300 text-gray-900">
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6 text-center">Income & Expense Calculator</h1>
+
+    <!-- balance- overviews -->
+    <div class="bg-blue-100 shadow-md rounded-lg p-6 mb-4">
+      <div class="flex justify-between">
+        <div>
+          <h2 class="text-lg">Total Income:</h2>
+          <p id="total-income" class="text-green-500 text-2xl">$0</p>
+        </div>
+        <div>
+          <h2 class="text-lg">Total Expense:</h2>
+          <p id="total-expense" class="text-red-500 text-2xl">$0</p>
+        </div>
+        <div>
+          <h2 class="text-lg">Net Balance:</h2>
+          <p id="net-balance" class="text-blue-500 text-2xl">$0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- add new entry -->
+    <div class="bg-blue-100 shadow-md rounded-lg p-6 mb-4">
+      <h2 class="text-xl font-bold mb-5 text-center">Add New Transaction</h2>
+      <form id="transaction-form" class="space-y-4">
+        <div>
+          <label class="block text-gray-700">Description</label>
+          <input type="text" id="description" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter description">
+        </div>
+        <div>
+          <label class="block text-gray-700">Amount</label>
+          <input type="number" id="amount" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter amount">
+        </div>
+        <div>
+          <label class="block text-gray-700">Type</label>
+          <select id="transaction-type" class="w-full px-4 py-2 border rounded-lg">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <div class="flex justify-center space-x-4 mb-4">
+        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg ">Add Transaction</button>
+    </div>
+
+
+      </form>
+    </div>
+
+    <!-- filters option -->
+    <div class="flex justify-center space-x-4 mb-4">
+      <label><input type="radio" name="filter" value="all" checked> All</label>
+      <label><input type="radio" name="filter" value="income"> Income</label>
+      <label><input type="radio" name="filter" value="expense"> Expense</label>
+    </div>
+
+    <!-- Transaction list -->
+    <div id="transaction-list" class="bg-blue-100 shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-bold mb-5 text-center">Transactions</h2>
+      <ul id="transactions" class="space-y-4">
+        <!-- Transactions will be displayed here -->
+      </ul>
+      <div class="flex justify-center space-x-4 mb-4">
+              <!-- Clear all button -->
+<button id="clear-btn" class="bg-red-500 text-white px-6 py-2 rounded-lg mt-4">Clear All</button></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
